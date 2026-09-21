@@ -50,3 +50,7 @@ london_co = {
         "routing": True,
     },
 }
+unit_name = input ('Enter unit name: ')
+unit_param = input ('Enter unit param ' + str(london_co[unit_name].keys()) + ':')
+print (london_co[unit_name][unit_param])
+
