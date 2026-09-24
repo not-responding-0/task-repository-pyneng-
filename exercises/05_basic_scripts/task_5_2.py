@@ -30,3 +30,36 @@ Out[1]: '11111111111111111111111111110000'
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
+
+ip_addr, mask = (input ('Введите ip адрес в формате ip/mask: ')).split('/')
+ip = ip_addr.split('.')
+mask_2 = ('1' * int(mask)) + ('0' * (32 - int(mask)))
+
+b0 = int(ip[0])
+b1 = int(ip[1])
+b2 = int(ip[2])
+b3 = int(ip[3])
+
+b00 = format(b0, '08b')
+b01 = format(b1, '08b')
+b02 = format(b2, '08b')
+b03 = format(b3, '08b')
+
+m0 = mask_2[0:8]
+m1 = mask_2[8:16]
+m2 = mask_2[16:24]
+m3 = mask_2[24:32]
+
+d0 = int(m0,2)
+d1 = int(m1,2)
+d2 = int(m2,2)
+d3 = int(m3,2)
+
+template = "Network:\n{:<10} {:<10} {:<10} {:<10}\n{:<10} {:<10} {:<10} {:<10}\n\nMask:\n"+"/"+mask+"\n{:<10} {:<10} {:<10} {:<10}\n{:<8}   {:<8}   {:<8}   {:<8}"
+
+print (template.format(b0,b1,b2,b3,b00,b01,b02,b03,d0,d1,d2,d3,m0,m1,m2,m3))
+#print ("Network:\n{:<10} {:<10} {:<10} {:<10}".format(ip[0], ip[1], ip[2], ip[3]))
+#print ("{:<08b}   {:<08b}   {:<08b}   {:<08b}".format(b0,b1,b2,b3))
+#print ("Mask:\n" + '/' + mask + "{:<10} {:<10} {:<10} {:<10}".format(d0,d1,d2,d3))
+#print ("{:<8}   {:<8}   {:<8}   {:<8}".format(m0,m1,m2,m3))
+

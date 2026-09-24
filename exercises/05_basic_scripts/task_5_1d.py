@@ -43,3 +43,8 @@ london_co = {
         "routing": True,
     },
 }
+name_unit = input('Enter name unit: ')
+param = input ('Enter unit parametr ' + str(london_co[name_unit].keys()) + ': ')
+print (london_co[name_unit].get(param.lower(), 'параметра нет'))
+
+
